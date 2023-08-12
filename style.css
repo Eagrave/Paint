@@ -8,22 +8,36 @@
   display: grid;
   grid-template-columns: repeat(16, 60px);
   grid-template-rows: repeat(16, 60px);
-}
-
-.grid-item {
   border: 1px solid black;
 }
 
 .content-container {
-  margin-top: 5vh;
-  gap: 10vw;
+  margin-top: 3vh;
+  gap: 5vw;
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 .content-container .controls {
-  width: 100px;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 20vw;
+  height: 40vh;
   border: 1px solid black;
+}
+.content-container .pickr .pcr-button {
+  width: 14vw;
+  height: 3vh;
+}
+.content-container .button-clear {
+  width: 14vw;
+  height: 3vh;
+}
+.content-container .button-grid {
+  width: 14vw;
+  height: 3vh;
 }/*# sourceMappingURL=style.css.map */

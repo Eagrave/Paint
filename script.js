@@ -1,10 +1,12 @@
 const parentBox = document.querySelector(".grid-container");
-const clearButton = document.querySelector(".button-clear")
+const clearButton = document.querySelector(".button-clear");
+let gridButton = document.querySelector(".button-grid");
 let isMouseDown = false;
+let isGridOn = true;
 const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'nano', 
-
+      
     components: {
 
      
@@ -26,7 +28,6 @@ const pickr = Pickr.create({
     }
 });
 
-
 const createGrid = ()=>{
 let hex = ''
  pickr.on('save', (color, instance) => {
@@ -38,6 +39,8 @@ let hex = ''
         const newBox = document.createElement("div");
         newBox.className = `grid-item`;
         parentBox.appendChild(newBox);
+               
+      
         newBox.addEventListener('mousedown', (e) => {
             isMouseDown = true;
             e.target.style.backgroundColor = hex;
@@ -57,7 +60,13 @@ let hex = ''
 }
 
 createGrid();
-
+gridButton.addEventListener('click',()=>{
+    isGridOn = !isGridOn;
+    const allGrid = document.querySelectorAll(".grid-item")
+    allGrid.forEach((grid)=>{
+        isGridOn === true ? grid.style.border = "1px solid black" : grid.style.border = "none";
+    })
+  })   
 
 clearButton.addEventListener('click',()=> {
     let boxes = document.querySelectorAll(".grid-item");
