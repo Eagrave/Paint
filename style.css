@@ -2,9 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #151c25;
+  color: #e81547;
+  font-size: 1rem;
 }
 
 .grid-container {
+  box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
   display: grid;
   grid-template-columns: repeat(16, 60px);
   grid-template-rows: repeat(16, 60px);
@@ -20,6 +26,11 @@
   align-items: center;
 }
 .content-container .controls {
+  border-radius: 20px;
+  border: 1px solid #6f2c8d;
+  box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 1px -2px 22px 9px rgba(0, 0, 0, 0.41);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,15 +40,127 @@
   height: 40vh;
   border: 1px solid black;
 }
+.content-container .controls h2 {
+  font-size: 2rem;
+}
 .content-container .pickr .pcr-button {
   width: 14vw;
   height: 3vh;
+  border: 1px solid #6f2c8d;
 }
-.content-container .button-clear {
-  width: 14vw;
+
+.button-clear {
   height: 3vh;
+  width: 14vw;
+  color: #e81547;
+  transition: all 0.3s;
+  position: relative;
+  background-color: #151c25;
 }
-.content-container .button-grid {
-  width: 14vw;
+
+.button-clear span {
+  transition: all 0.3s;
+}
+
+.button-clear::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #151c25;
+  border-bottom-color: #151c25;
+  transform: scale(0.1, 1);
+}
+
+.button-clear:hover span {
+  letter-spacing: 2px;
+}
+
+.button-clear:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.button-clear::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-clear:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+.button-grid {
   height: 3vh;
+  width: 14vw;
+  color: #e81547;
+  transition: all 0.3s;
+  position: relative;
+  background-color: #151c25;
+}
+
+.button-grid span {
+  transition: all 0.3s;
+}
+
+.button-grid::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #151c25;
+  border-bottom-color: #151c25;
+  transform: scale(0.1, 1);
+}
+
+.button-grid:hover span {
+  letter-spacing: 2px;
+}
+
+.button-grid:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.button-grid::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-grid:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }/*# sourceMappingURL=style.css.map */

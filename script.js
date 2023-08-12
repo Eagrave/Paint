@@ -3,6 +3,7 @@ const clearButton = document.querySelector(".button-clear");
 let gridButton = document.querySelector(".button-grid");
 let isMouseDown = false;
 let isGridOn = true;
+let defaultColor = "black";
 const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'nano', 
@@ -31,7 +32,7 @@ const pickr = Pickr.create({
 const createGrid = ()=>{
 let hex = ''
  pickr.on('save', (color, instance) => {
-    let newColor = color.toHEXA();
+    let newColor = color.toHEXA(); 
     hex = '#' + newColor.join('');
   
 });
@@ -39,19 +40,17 @@ let hex = ''
         const newBox = document.createElement("div");
         newBox.className = `grid-item`;
         parentBox.appendChild(newBox);
-               
-      
         newBox.addEventListener('mousedown', (e) => {
             isMouseDown = true;
-            e.target.style.backgroundColor = hex;
+            hex === '' ?e.target.style.backgroundColor = defaultColor:e.target.style.backgroundColor = hex;
+                
         })
         newBox.addEventListener('mouseup', () => {
             isMouseDown = false;
-           
         })
         newBox.addEventListener('mousemove', (e) => {
-            if(isMouseDown) {
-                e.target.style.backgroundColor = hex;
+            if (isMouseDown) {
+                hex === '' ?e.target.style.backgroundColor = defaultColor:e.target.style.backgroundColor = hex;
             }
         });
 
